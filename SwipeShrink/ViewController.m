@@ -23,15 +23,11 @@
 - (void)viewDidLoad
 {
     [super viewDidLoad];
-    //self.edgesForExtendedLayout = UIRectEdgeNone;
-    //self.extendedLayoutIncludesOpaqueBars = NO;
-    //self.automaticallyAdjustsScrollViewInsets = NO;
-    
 
-	
     _mainTableView = [[UITableView alloc] initWithFrame:self.view.frame style:UITableViewStyleGrouped];
     _mainTableView.delegate = self;
     _mainTableView.dataSource = self;
+    _mainTableView.autoresizingMask = ( UIViewAutoresizingFlexibleWidth | UIViewAutoresizingFlexibleHeight);
     [self.view addSubview:_mainTableView];
 }
 

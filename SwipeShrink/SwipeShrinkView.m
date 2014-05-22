@@ -10,7 +10,6 @@
 
 @implementation SwipeShrinkView
 {
-    CGFloat scaleValue;
     CGRect originalFrame;
     BOOL isLarge;
 }
@@ -23,7 +22,6 @@
     
     _topView = top;
     _bottomView = bottom;
-    scaleValue = 1;
     originalFrame = self.frame;
     isLarge = YES;
     
@@ -50,7 +48,6 @@
 
 - (void)removeMe
 {
-    NSLog(@"removing");
     [self removeFromSuperview];
 }
 
@@ -70,32 +67,58 @@
     } completion:^(BOOL finished) {
         isLarge = YES;
     }];
-    /*CGPoint translation = [recognizer translationInView:self];
-    if (translation.y >= 0)
-    {
-        NSLog(@"height: %f and new: %f", orginalHeight, recognizer.view.center.y + translation.y);
-        scaleValue = (orginalHeight - (recognizer.view.center.y + translation.y))/448.0;
-        NSLog(@"scale: %f", scaleValue);
-        CGAffineTransform scale = CGAffineTransformMakeScale(scaleValue, scaleValue);
-        self.transform = scale;
-    }
-    else
-    {
-        NSLog(@"height: %f and translation: %f final = %f", recognizer.view.center.y, translation.y, (orginalHeight - (recognizer.view.center.y + translation.y)));
-        scaleValue = (orginalHeight - (recognizer.view.center.y + translation.y))/383.0;
-        NSLog(@"scale: %f", scaleValue);
-        CGAffineTransform scale = CGAffineTransformMakeScale(scaleValue, scaleValue);
-        self.transform = scale;
-    }
     
-    recognizer.view.center = CGPointMake(self.bounds.size.width/2, recognizer.view.center.y + translation.y);
-    [recognizer setTranslation:CGPointMake(0, 0) inView:self];*/
+    // TODO: possible implementation, need to modify to desired path or use some other sort of interactive transition
+    
+    /*CGPoint center = CGPointMake(63.0 + 194.0/2, 141.0+ 194.0/2);
+    
+    UIView *piece = [recognizer view];
+    
+    if ([recognizer state] == UIGestureRecognizerStateBegan || [recognizer state] == UIGestureRecognizerStateChanged)
+    {
+        if (piece == _topView)
+        {
+            
+            CGPoint translation = [recognizer translationInView:[piece superview]];
+            float newX = piece.frame.origin.x + translation.x;
+            CGRect newFrame = piece.frame;
+            
+            CGPoint pinCenter = CGPointMake(newFrame.origin.x + newFrame.size.width / 2.0, newFrame.origin.y + newFrame.size.height / 2.0);
+            newFrame.origin.x = newX;
+            
+            CGPoint newPinCenter = CGPointMake(newFrame.origin.x + newFrame.size.width / 2.0, newFrame.origin.y + newFrame.size.height / 2.0);
+            
+            float detectY = pinCenter.y + translation.y;
+            BOOL bUpCenter = detectY < center.y;
+            
+            float deltaX = center.x - newPinCenter.x;
+            float deltaY = sqrtf((97.0 *97.0) - (deltaX * deltaX));
+            float newY;
+            
+            if (bUpCenter) {
+                newY = center.y - deltaY;
+            }
+            else {
+                newY = center.y + deltaY;
+            }
+            
+            newY -= newFrame.size.height / 2.0;
+            newFrame.origin.y = newY;
+            
+            if ((newPinCenter.x >= 63.0) && (newPinCenter.x <= 63.0+194.0))
+            {
+                [piece setFrame:newFrame];
+            }
+        }
+        
+        [recognizer setTranslation:CGPointZero inView:[piece superview]];
+    }*/
 }
 
 - (void)minimizeView
 {
     if (!isLarge) return;
-    NSLog(@"shrinking...");
+
     [UIView animateWithDuration:1.0 delay:0 options:UIViewAnimationOptionAllowUserInteraction animations:^{
         CGAffineTransform first = CGAffineTransformMakeScale(0.5, 0.5);
         CGPoint destination = CGPointMake(self.frame.size.width/4.5, self.frame.size.height/1.8);
@@ -104,19 +127,11 @@
         CGAffineTransform combo = CGAffineTransformConcat(first, second);
         self.transform = combo;
         self.bottomView.alpha = 0;
+        
     } completion:^(BOOL finished) {
         self.bottomView.hidden = YES;
         isLarge = NO;
     }];
 }
-
-/*
-// Only override drawRect: if you perform custom drawing.
-// An empty implementation adversely affects performance during animation.
-- (void)drawRect:(CGRect)rect
-{
-    // Drawing code
-}
-*/
 
 @end
