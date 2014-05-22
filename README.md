@@ -8,14 +8,20 @@ A UIView transition helper to minimize a view while allowing user interaction wi
 <p align="left">
   <img style="padding=5px;" src="https://github.com/tfrank64/Pure-Guitar-Tuner/raw/master/Screenshot_05:11:14.png" alt="Screenshot" height="480" width="320"/> -> 
 
-    <img src="https://github.com/tfrank64/Pure-Guitar-Tuner/raw/master/Screenshot_05:11:14.png" alt="Screenshot" height="480" width="320"/>
+    <img src="https://github.com/tfrank64/TFSwipeShrink/raw/master/RepoImages/transition.PNG" alt="Screenshot" height="480" width="320"/>
 </p>
 
-The goal is the screenshot on the left with the current look on the right.
+The current YouTube app is the goal and inspiration for this little project. The video minimizing and maximizing being the point of interest.
+
+<p align ="center">
+<img src="https://github.com/tfrank64/TFSwipeShrink/raw/master/RepoImages/repo-minimized.png" alt="Screenshot" height="480" width="320"/>
+</p>
+
 
 ### TODO
 
-
+* Add interactivity to SwipeShrinkView so the user can control the animation.
+* Add helper methods to make project easy to implement.
 
 ## Contributing
 
