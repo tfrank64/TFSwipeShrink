@@ -1,14 +1,14 @@
 //
-//  SwipeShrinkView.m
-//  SwipeShrink
+//  TFSwipeShrinkView.m
+//  TFSwipeShrink
 //
 //  Created by Taylor Franklin on 5/19/14.
 //  Copyright (c) 2014 Taylor Franklin. All rights reserved.
 //
 
-#import "SwipeShrinkView.h"
+#import "TFSwipeShrinkView.h"
 
-@implementation SwipeShrinkView
+@implementation TFSwipeShrinkView
 {
     CGRect originalFrame;
     BOOL isLarge;

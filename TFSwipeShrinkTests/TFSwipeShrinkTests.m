@@ -1,18 +1,18 @@
 //
-//  SwipeShrinkTests.m
-//  SwipeShrinkTests
+//  TFSwipeShrinkTests.m
+//  TFSwipeShrinkTests
 //
-//  Created by Taylor Franklin on 5/19/14.
+//  Created by Taylor Franklin on 5/21/14.
 //  Copyright (c) 2014 Taylor Franklin. All rights reserved.
 //
 
 #import <XCTest/XCTest.h>
 
-@interface SwipeShrinkTests : XCTestCase
+@interface TFSwipeShrinkTests : XCTestCase
 
 @end
 
-@implementation SwipeShrinkTests
+@implementation TFSwipeShrinkTests
 
 - (void)setUp
 {

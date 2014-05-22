@@ -1,14 +1,14 @@
 //
-//  AppDelegate.h
-//  SwipeShrink
+//  TFAppDelegate.h
+//  TFSwipeShrink
 //
-//  Created by Taylor Franklin on 5/19/14.
+//  Created by Taylor Franklin on 5/21/14.
 //  Copyright (c) 2014 Taylor Franklin. All rights reserved.
 //
 
 #import <UIKit/UIKit.h>
 
-@interface AppDelegate : UIResponder <UIApplicationDelegate>
+@interface TFAppDelegate : UIResponder <UIApplicationDelegate>
 
 @property (strong, nonatomic) UIWindow *window;
 

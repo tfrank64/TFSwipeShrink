@@ -6,24 +6,24 @@
 //  Copyright (c) 2014 Taylor Franklin. All rights reserved.
 //
 
-#import "ViewController.h"
-#import "SwipeShrinkView.h"
+#import "TFViewController.h"
+#import "TFSwipeShrinkView.h"
 
-@interface ViewController () <UITableViewDataSource, UITableViewDelegate>
+@interface TFViewController () <UITableViewDataSource, UITableViewDelegate>
 
 @property (nonatomic, strong) UITableView *mainTableView;
-@property (nonatomic, strong) SwipeShrinkView *overView;
+@property (nonatomic, strong) TFSwipeShrinkView *overView;
 @property (nonatomic, strong) UIView *infoView;
 @property (nonatomic, strong) UIView *extraInfoView;
 
 @end
 
-@implementation ViewController
+@implementation TFViewController
 
 - (void)viewDidLoad
 {
     [super viewDidLoad];
-
+    
     _mainTableView = [[UITableView alloc] initWithFrame:self.view.frame style:UITableViewStyleGrouped];
     _mainTableView.delegate = self;
     _mainTableView.dataSource = self;
@@ -72,7 +72,7 @@
     if (_overView != nil)
         [_overView removeFromSuperview];
     
-    _overView = [[SwipeShrinkView alloc] initWithFrame:theFrame withTop:_infoView andBottom:_extraInfoView];
+    _overView = [[TFSwipeShrinkView alloc] initWithFrame:theFrame withTop:_infoView andBottom:_extraInfoView];
     [self.view addSubview:_overView];
 }
 
