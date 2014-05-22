@@ -5,11 +5,17 @@ A UIView transition helper to minimize a view while allowing user interaction wi
 
 ### Screenshot
 
-<p align="center">
-  <img src="https://github.com/tfrank64/Pure-Guitar-Tuner/raw/master/Screenshot_05:11:14.png" alt="Screenshot" height="480" width="320"/>
+<p align="left">
+  <img style="padding=5px;" src="https://github.com/tfrank64/Pure-Guitar-Tuner/raw/master/Screenshot_05:11:14.png" alt="Screenshot" height="480" width="320"/> -> 
+
+    <img src="https://github.com/tfrank64/Pure-Guitar-Tuner/raw/master/Screenshot_05:11:14.png" alt="Screenshot" height="480" width="320"/>
 </p>
 
-Current look as of 05/11/2014
+The goal is the screenshot on the left with the current look on the right.
+
+### TODO
+
+
 
 ## Contributing
 
