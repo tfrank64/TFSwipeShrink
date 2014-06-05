@@ -10,7 +10,7 @@
 
 @interface TFSwipeShrinkView : UIView
 
-- (id)initWithFrame:(CGRect)frame withTop:(UIView *)top andBottom:(UIView *)bottom;
+- (instancetype)initWithFrame:(CGRect)frame withTop:(UIView *)top andBottom:(UIView *)bottom NS_DESIGNATED_INITIALIZER;
 
 @property (strong, nonatomic) UIView *topView;
 @property (strong, nonatomic) UIView *bottomView;

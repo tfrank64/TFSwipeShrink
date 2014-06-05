@@ -14,7 +14,7 @@
     BOOL isLarge;
 }
 
-- (id)initWithFrame:(CGRect)frame withTop:(UIView *)top andBottom:(UIView *)bottom
+- (instancetype)initWithFrame:(CGRect)frame withTop:(UIView *)top andBottom:(UIView *)bottom
 {
     self = [super initWithFrame:frame];
     if (self == nil)
