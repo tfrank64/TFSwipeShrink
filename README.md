@@ -1,3 +1,4 @@
+[![Build Status](https://travis-ci.org/tfrank64/TFSwipeShrink.svg?branch=v0.1-alpha)](https://travis-ci.org/tfrank64/TFSwipeShrink)
 TFSwipeShrink
 =============
 
