@@ -29,7 +29,5 @@ This is the current (simple) look in minimized position.
 
 Feel free to fork the repo and open a pull request. Using fairly normal convention, make changes in a separte branch then request to pull into `master`.
 
-I lack the sound detection skills on iOS to get the frequency detection working well, but I'm sure we can make it work together.
-
 ## License
 TFSwipeShrink is licensed under the [MIT license.](https://github.com/tfrank64/TFSwipeShrink/blob/master/LICENSE.md)
