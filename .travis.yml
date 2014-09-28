@@ -1,0 +1,7 @@
+language: objective-c
+notifications:
+  email:
+    recipients:
+      - tlf09a@acu.edu
+    on_success: [always|never|change] # default: never
+    on_failure: [always|never|change] # default: always
