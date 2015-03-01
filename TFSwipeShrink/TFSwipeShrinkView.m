@@ -57,7 +57,7 @@
     
     [UIView animateWithDuration:1.0 delay:0 options:UIViewAnimationOptionAllowUserInteraction animations:^{
         CGAffineTransform first = CGAffineTransformMakeScale(2.0, 2.0);
-        CGPoint destination = CGPointMake(-originalFrame.size.width/2.25, -originalFrame.size.height-45);
+        CGPoint destination = CGPointMake(-originalFrame.size.width * 4 / 9, -originalFrame.size.height * 10 / 9);
         CGAffineTransform second = CGAffineTransformTranslate(self.transform, destination.x, destination.y);
         
         CGAffineTransform combo = CGAffineTransformConcat(first, second);
@@ -121,7 +121,7 @@
 
     [UIView animateWithDuration:1.0 delay:0 options:UIViewAnimationOptionAllowUserInteraction animations:^{
         CGAffineTransform first = CGAffineTransformMakeScale(0.5, 0.5);
-        CGPoint destination = CGPointMake(self.frame.size.width/4.5, self.frame.size.height/1.8);
+        CGPoint destination = CGPointMake(self.frame.size.width * 2 / 9, self.frame.size.height * 5 / 9);
         CGAffineTransform second = CGAffineTransformTranslate(self.transform, destination.x, destination.y);
         
         CGAffineTransform combo = CGAffineTransformConcat(first, second);
