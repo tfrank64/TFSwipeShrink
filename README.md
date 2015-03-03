@@ -4,6 +4,9 @@ TFSwipeShrink
 
 A UIView transition helper to minimize a view while allowing user interaction with the background view, similar to the current YouTube iOS and Android apps.
 
+##Update 03/02/15
+It has been awhile since I updated this, but I have started fresh with much more experience under my belt and a new Swift project (within this repo). Most of the functionality is there, I just need to wrap it up and clean up this Readme!
+
 ### Screenshot
 
 <p align="left">

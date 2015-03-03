@@ -169,6 +169,7 @@
 				TargetAttributes = {
 					6B388A6A1A92F781003D2138 = {
 						CreatedOnToolsVersion = 6.3;
+						DevelopmentTeam = E7MP3ZCP88;
 					};
 					6B388A7F1A92F781003D2138 = {
 						CreatedOnToolsVersion = 6.3;
@@ -353,6 +354,7 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				INFOPLIST_FILE = TFSwipeShrink/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 8.1;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 			};
@@ -363,6 +365,7 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				INFOPLIST_FILE = TFSwipeShrink/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 8.1;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 			};
@@ -421,6 +424,7 @@
 				6B388A8C1A92F781003D2138 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		6B388A8D1A92F781003D2138 /* Build configuration list for PBXNativeTarget "TFSwipeShrinkTests" */ = {
 			isa = XCConfigurationList;
@@ -429,6 +433,7 @@
 				6B388A8F1A92F781003D2138 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};

@@ -21,8 +21,8 @@ class ExampleViewController: UIViewController {
     override func viewDidAppear(animated: Bool) {
         super.viewDidAppear(animated)
         
-        swipeShrinkView.initialCenter = swipeShrinkView.center
-        swipeShrinkView.finalCenter = CGPointMake(self.view.frame.size.width - self.view.frame.size.width/4, self.view.frame.size.height - (swipeShrinkView.frame.size.height/2))
+
+        swipeShrinkView.configureSizeAndPosition(self.view.frame)
         
     }
 
