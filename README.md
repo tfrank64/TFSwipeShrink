@@ -7,7 +7,7 @@ A UIView subclass that mimics the video player panning in the the current YouTub
 ## Example
 
 <p align="center">
-    <img src="https://github.com/tfrank64/TFSwipeShrink/raw/master/RepoImages/swipShrinkAnimation.gif" alt="Screenshot" height="667" width="375"/>
+    <img src="https://github.com/tfrank64/TFSwipeShrink/raw/master/RepoImages/swipShrinkAnimation.gif" alt="Screenshot" height="605" width="340"/>
 </p>
 
 ### Installation
@@ -24,7 +24,7 @@ View `ExampleViewController.swift` to see an example of adding a video on top of
 From here, everything should just work. It is up to you the developer to **add whatever you want on top of the swipe shrink view, such as a video or an image.**
 In it's default state, you should have something that looks like this.
 <p align ="center">
-<img src="https://github.com/tfrank64/TFSwipeShrink/raw/master/RepoImages/maxvideo.png" alt="Screenshot" height="667" width="375"/>
+<img src="https://github.com/tfrank64/TFSwipeShrink/raw/master/RepoImages/maxvideo.png" alt="Screenshot" height="605" width="340"/>
 </p>
 
 ## Author
@@ -39,6 +39,8 @@ Created by Taylor Franklin
 ### Contributing
 
 Feel free to fork the repo and open a pull request. Using fairly normal convention, make changes in your forked repo, then submit a pull request.
+
+To view some of the original Objective-C code for this project, check out the `ObjCSwipeShrink` directory.
 
 ## License
 TFSwipeShrink is licensed under the [MIT license.](https://github.com/tfrank64/TFSwipeShrink/blob/master/LICENSE.md)
