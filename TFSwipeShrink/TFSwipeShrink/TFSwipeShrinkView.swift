@@ -39,13 +39,13 @@ class TFSwipeShrinkView: UIView, UIGestureRecognizerDelegate {
         tapGesture.delegate = self
     }
     
-    func configureSizeAndPosition(parentView: CGRect) {
+    func configureSizeAndPosition(parentViewFrame: CGRect) {
         
         self.initialCenter = self.center
-        self.finalCenter = CGPointMake(parentView.size.width - parentView.size.width/4, parentView.size.height - (self.frame.size.height/4) - 2)
+        self.finalCenter = CGPointMake(parentViewFrame.size.width - parentViewFrame.size.width/4, parentViewFrame.size.height - (self.frame.size.height/4) - 2)
         
         initialSize = self.frame.size
-        finalSize = CGSizeMake(parentView.size.width/2 - 10, (parentView.size.width/2 - 10) * aspectRatio)
+        finalSize = CGSizeMake(parentViewFrame.size.width/2 - 10, (parentViewFrame.size.width/2 - 10) * aspectRatio)
         
         // Set common range totals once
         rangeTotal = finalCenter!.y - initialCenter!.y

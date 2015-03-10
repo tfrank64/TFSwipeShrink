@@ -2,36 +2,43 @@
 TFSwipeShrink
 =============
 
-A UIView transition helper to minimize a view while allowing user interaction with the background view, similar to the current YouTube iOS and Android apps.
+A UIView subclass that mimics the video player panning in the the current YouTube iOS and Android apps.
 
-##Update 03/02/15
-It has been awhile since I updated this, but I have started fresh with much more experience under my belt and a new Swift project (within this repo). Most of the functionality is there, I just need to wrap it up and clean up this Readme!
-
-### Screenshot
+### Example
 
 <p align="left">
-    <img src="https://github.com/tfrank64/TFSwipeShrink/raw/master/RepoImages/transition.PNG" alt="Screenshot" height="480" width="320"/> -> 
-    
-  <img src="https://github.com/tfrank64/TFSwipeShrink/raw/master/RepoImages/minimized.PNG" alt="Screenshot" height="480" width="320"/>
+    <img src="https://github.com/tfrank64/TFSwipeShrink/raw/master/RepoImages/swipShrinkAnimation.gif" alt="Screenshot" height="480" width="320"/>
 </p>
 
-The current YouTube app is the goal and inspiration for this little project. The video minimizing and maximizing being the point of interest.
+### Installation
 
+Copy the `TFSwipeShrinkView.swift` file into your Xcode project and you are ready.
+
+### Usage
+
+View `ExampleViewController.swift` to see an example of adding a video on top of a `TFSwipeShrinkView`.
+
+1. Create a UIView in storyboard giving it a custom class of `TFSwipeShrinkView`. I suggest placing it at the top of your viewcontroller just as the YouTube app does.
+2. In the viewcontroller implementing your TFSwipeShrinkView, within the `viewDidAppear` method call the `configureSizeAndPosition(parentViewFrame: CGRect)` on your swipe shrink object.
+
+From here, everything should just work. It is up to you the developer to **add whatever you want on top of the swipe shrink view, such as a video or an image.**
+In it's default state, you should have something that looks like this.
 <p align ="center">
-<img src="https://github.com/tfrank64/TFSwipeShrink/raw/master/RepoImages/repo-minimized.png" alt="Screenshot" height="480" width="320"/>
+<img src="https://github.com/tfrank64/TFSwipeShrink/raw/master/RepoImages/maxvideo.png" alt="Screenshot" height="480" width="320"/>
 </p>
 
-This is the current (simple) look in minimized position.
+## Author
+
+Created by Taylor Franklin
+([tfrank64](https://twitter.com/tfrank64))
 
 ### TODO
 
-* Add interactivity to SwipeShrinkView so the user can control the animation.
-* Add helper methods to make project easy to implement.
-* Make code work with all screen sizes.
+* Create a secondary view below shrink view, similar to YouTube app.
 
-## Contributing
+### Contributing
 
-Feel free to fork the repo and open a pull request. Using fairly normal convention, make changes in a separte branch then request to pull into `master`.
+Feel free to fork the repo and open a pull request. Using fairly normal convention, make changes in your forked repo, then submit a pull request.
 
 ## License
 TFSwipeShrink is licensed under the [MIT license.](https://github.com/tfrank64/TFSwipeShrink/blob/master/LICENSE.md)
