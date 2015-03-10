@@ -4,10 +4,10 @@ TFSwipeShrink
 
 A UIView subclass that mimics the video player panning in the the current YouTube iOS and Android apps.
 
-### Example
+## Example
 
-<p align="left">
-    <img src="https://github.com/tfrank64/TFSwipeShrink/raw/master/RepoImages/swipShrinkAnimation.gif" alt="Screenshot" height="480" width="320"/>
+<p align="center">
+    <img src="https://github.com/tfrank64/TFSwipeShrink/raw/master/RepoImages/swipShrinkAnimation.gif" alt="Screenshot" height="667" width="375"/>
 </p>
 
 ### Installation
@@ -24,7 +24,7 @@ View `ExampleViewController.swift` to see an example of adding a video on top of
 From here, everything should just work. It is up to you the developer to **add whatever you want on top of the swipe shrink view, such as a video or an image.**
 In it's default state, you should have something that looks like this.
 <p align ="center">
-<img src="https://github.com/tfrank64/TFSwipeShrink/raw/master/RepoImages/maxvideo.png" alt="Screenshot" height="480" width="320"/>
+<img src="https://github.com/tfrank64/TFSwipeShrink/raw/master/RepoImages/maxvideo.png" alt="Screenshot" height="667" width="375"/>
 </p>
 
 ## Author
