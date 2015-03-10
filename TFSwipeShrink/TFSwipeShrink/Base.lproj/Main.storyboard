@@ -15,49 +15,14 @@
                         <autoresizingMask key="autoresizingMask"/>
                     </navigationBar>
                     <connections>
-                        <segue destination="BYZ-38-t0r" kind="relationship" relationship="rootViewController" id="gf0-Gm-Utz"/>
+                        <segue destination="fJc-bh-UwD" kind="relationship" relationship="rootViewController" id="CO8-Vj-8c0"/>
                     </connections>
                 </navigationController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="BxM-IL-EEJ" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="380" y="328"/>
         </scene>
-        <!--View Controller-->
-        <scene sceneID="tne-QT-ifu">
-            <objects>
-                <viewController id="BYZ-38-t0r" customClass="ViewController" customModule="TFSwipeShrink" customModuleProvider="target" sceneMemberID="viewController">
-                    <layoutGuides>
-                        <viewControllerLayoutGuide type="top" id="y3c-jy-aDJ"/>
-                        <viewControllerLayoutGuide type="bottom" id="wfy-db-euE"/>
-                    </layoutGuides>
-                    <view key="view" contentMode="scaleToFill" id="8bC-Xf-vdC">
-                        <rect key="frame" x="0.0" y="0.0" width="414" height="736"/>
-                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
-                        <subviews>
-                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="TlX-Vu-Wdq">
-                                <rect key="frame" x="170" y="197" width="75" height="30"/>
-                                <state key="normal" title="Play Movie">
-                                    <color key="titleColor" red="0.48088787553648071" green="0.11290577142341186" blue="0.47836116055799244" alpha="1" colorSpace="calibratedRGB"/>
-                                    <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
-                                </state>
-                                <connections>
-                                    <segue destination="fJc-bh-UwD" kind="show" id="bf1-GK-AKc"/>
-                                </connections>
-                            </button>
-                        </subviews>
-                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
-                        <constraints>
-                            <constraint firstAttribute="centerX" secondItem="TlX-Vu-Wdq" secondAttribute="centerX" constant="-0.5" id="0y0-Hh-t3Q"/>
-                            <constraint firstAttribute="centerY" secondItem="TlX-Vu-Wdq" secondAttribute="centerY" constant="156" id="bQk-5r-7BL"/>
-                        </constraints>
-                    </view>
-                    <navigationItem key="navigationItem" id="XlW-eK-NB7"/>
-                </viewController>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
-            </objects>
-            <point key="canvasLocation" x="1077" y="328"/>
-        </scene>
-        <!--Example View Controller-->
+        <!--TFSwipeShrink-->
         <scene sceneID="7bZ-7A-Vbm">
             <objects>
                 <viewController id="fJc-bh-UwD" customClass="ExampleViewController" customModule="TFSwipeShrink" customModuleProvider="target" sceneMemberID="viewController">
@@ -69,7 +34,17 @@
                         <rect key="frame" x="0.0" y="0.0" width="414" height="736"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Waz-Yl-cFB" customClass="TFSwipeShrinkView" customModule="TFSwipeShrink" customModuleProvider="target">
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="rhe-yB-Hcp">
+                                <rect key="frame" x="170" y="190" width="75" height="30"/>
+                                <state key="normal" title="Play Movie">
+                                    <color key="titleColor" red="0.48088787550000001" green="0.11290577139999999" blue="0.4783611606" alpha="1" colorSpace="calibratedRGB"/>
+                                    <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
+                                </state>
+                                <connections>
+                                    <action selector="playMovie:" destination="fJc-bh-UwD" eventType="touchUpInside" id="e2d-W4-5Tl"/>
+                                </connections>
+                            </button>
+                            <view hidden="YES" alpha="0.0" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Waz-Yl-cFB" customClass="TFSwipeShrinkView" customModule="TFSwipeShrink" customModuleProvider="target">
                                 <rect key="frame" x="0.0" y="64" width="414" height="233"/>
                                 <color key="backgroundColor" white="0.66666666666666663" alpha="1" colorSpace="calibratedWhite"/>
                                 <constraints>
@@ -80,17 +55,20 @@
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <constraints>
                             <constraint firstItem="Waz-Yl-cFB" firstAttribute="top" secondItem="RAq-Mb-eAh" secondAttribute="bottom" id="EAe-eS-fk2"/>
+                            <constraint firstAttribute="centerX" secondItem="rhe-yB-Hcp" secondAttribute="centerX" constant="-0.5" id="hHe-8A-FbS"/>
+                            <constraint firstAttribute="centerY" secondItem="rhe-yB-Hcp" secondAttribute="centerY" constant="163" id="ipL-u0-ZRq"/>
                             <constraint firstItem="Waz-Yl-cFB" firstAttribute="leading" secondItem="h8d-SL-ddv" secondAttribute="leading" id="ohE-Me-DlN"/>
                             <constraint firstAttribute="trailing" secondItem="Waz-Yl-cFB" secondAttribute="trailing" id="xc4-fu-qi6"/>
                         </constraints>
                     </view>
+                    <navigationItem key="navigationItem" title="TFSwipeShrink" id="Mdn-rI-XCd"/>
                     <connections>
                         <outlet property="swipeShrinkView" destination="Waz-Yl-cFB" id="LJw-LH-nKC"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="TeO-FZ-Q22" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1785" y="328"/>
+            <point key="canvasLocation" x="1073" y="328"/>
         </scene>
     </scenes>
 </document>

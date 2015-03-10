@@ -7,22 +7,29 @@
 //
 
 import UIKit
+import MediaPlayer
 
 class ExampleViewController: UIViewController {
     
     
     @IBOutlet weak var swipeShrinkView: TFSwipeShrinkView!
+    var moviePlayerController: MPMoviePlayerViewController!
 
     override func viewDidLoad() {
         super.viewDidLoad()
-
+        var path = NSBundle.mainBundle().pathForResource("bayw-HD", ofType: "mp4")
+        moviePlayerController = MPMoviePlayerViewController(contentURL: NSURL.fileURLWithPath(path!))
+        moviePlayerController.moviePlayer.controlStyle = MPMovieControlStyle.None
+        moviePlayerController.moviePlayer.scalingMode = MPMovieScalingMode.AspectFit
     }
     
     override func viewDidAppear(animated: Bool) {
         super.viewDidAppear(animated)
-        
 
         swipeShrinkView.configureSizeAndPosition(self.view.frame)
+        moviePlayerController.view.frame = CGRectMake(0, 0, swipeShrinkView.frame.size.width, swipeShrinkView.frame.size.height)
+        swipeShrinkView.addSubview(moviePlayerController.view)
+        moviePlayerController.moviePlayer.pause()
         
     }
 
@@ -32,14 +39,15 @@ class ExampleViewController: UIViewController {
     }
     
 
-    /*
-    // MARK: - Navigation
-
-    // In a storyboard-based application, you will often want to do a little preparation before navigation
-    override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject?) {
-        // Get the new view controller using segue.destinationViewController.
-        // Pass the selected object to the new view controller.
+    @IBAction func playMovie(sender: AnyObject) {
+        
+        self.swipeShrinkView.hidden = false
+        UIView.animateWithDuration(0.4, animations: {
+            self.swipeShrinkView.alpha = 1.0
+        }, completion: {(done: Bool) in
+            self.moviePlayerController.moviePlayer.play()
+        })
+        
     }
-    */
 
 }

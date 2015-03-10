@@ -8,7 +8,6 @@
 
 /* Begin PBXBuildFile section */
 		6B388A711A92F781003D2138 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6B388A701A92F781003D2138 /* AppDelegate.swift */; };
-		6B388A731A92F781003D2138 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6B388A721A92F781003D2138 /* ViewController.swift */; };
 		6B388A761A92F781003D2138 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 6B388A741A92F781003D2138 /* Main.storyboard */; };
 		6B388A781A92F781003D2138 /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 6B388A771A92F781003D2138 /* Images.xcassets */; };
 		6B388A7B1A92F781003D2138 /* LaunchScreen.xib in Resources */ = {isa = PBXBuildFile; fileRef = 6B388A791A92F781003D2138 /* LaunchScreen.xib */; };
@@ -17,6 +16,7 @@
 		6B388A921A92F92E003D2138 /* ExampleViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6B388A901A92F92E003D2138 /* ExampleViewController.swift */; };
 		6B388A941A930093003D2138 /* TFSwipeShrinkView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6B388A931A930093003D2138 /* TFSwipeShrinkView.swift */; };
 		6B388A951A930093003D2138 /* TFSwipeShrinkView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6B388A931A930093003D2138 /* TFSwipeShrinkView.swift */; };
+		6BE701631AAE8B72009F298B /* bayw-HD.mp4 in Resources */ = {isa = PBXBuildFile; fileRef = 6BE701621AAE8B72009F298B /* bayw-HD.mp4 */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -33,7 +33,6 @@
 		6B388A6B1A92F781003D2138 /* TFSwipeShrink.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = TFSwipeShrink.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		6B388A6F1A92F781003D2138 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		6B388A701A92F781003D2138 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
-		6B388A721A92F781003D2138 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
 		6B388A751A92F781003D2138 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		6B388A771A92F781003D2138 /* Images.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Images.xcassets; sourceTree = "<group>"; };
 		6B388A7A1A92F781003D2138 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = Base; path = Base.lproj/LaunchScreen.xib; sourceTree = "<group>"; };
@@ -42,6 +41,7 @@
 		6B388A861A92F781003D2138 /* TFSwipeShrinkTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TFSwipeShrinkTests.swift; sourceTree = "<group>"; };
 		6B388A901A92F92E003D2138 /* ExampleViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ExampleViewController.swift; sourceTree = "<group>"; };
 		6B388A931A930093003D2138 /* TFSwipeShrinkView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TFSwipeShrinkView.swift; sourceTree = "<group>"; };
+		6BE701621AAE8B72009F298B /* bayw-HD.mp4 */ = {isa = PBXFileReference; lastKnownFileType = file; path = "bayw-HD.mp4"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -84,12 +84,11 @@
 			isa = PBXGroup;
 			children = (
 				6B388A701A92F781003D2138 /* AppDelegate.swift */,
-				6B388A721A92F781003D2138 /* ViewController.swift */,
-				6B388A741A92F781003D2138 /* Main.storyboard */,
+				6B388A901A92F92E003D2138 /* ExampleViewController.swift */,
 				6B388A771A92F781003D2138 /* Images.xcassets */,
 				6B388A791A92F781003D2138 /* LaunchScreen.xib */,
+				6B388A741A92F781003D2138 /* Main.storyboard */,
 				6B388A6E1A92F781003D2138 /* Supporting Files */,
-				6B388A901A92F92E003D2138 /* ExampleViewController.swift */,
 				6B388A931A930093003D2138 /* TFSwipeShrinkView.swift */,
 			);
 			path = TFSwipeShrink;
@@ -98,6 +97,7 @@
 		6B388A6E1A92F781003D2138 /* Supporting Files */ = {
 			isa = PBXGroup;
 			children = (
+				6BE701621AAE8B72009F298B /* bayw-HD.mp4 */,
 				6B388A6F1A92F781003D2138 /* Info.plist */,
 			);
 			name = "Supporting Files";
@@ -203,6 +203,7 @@
 			files = (
 				6B388A761A92F781003D2138 /* Main.storyboard in Resources */,
 				6B388A7B1A92F781003D2138 /* LaunchScreen.xib in Resources */,
+				6BE701631AAE8B72009F298B /* bayw-HD.mp4 in Resources */,
 				6B388A781A92F781003D2138 /* Images.xcassets in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -221,7 +222,6 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				6B388A731A92F781003D2138 /* ViewController.swift in Sources */,
 				6B388A711A92F781003D2138 /* AppDelegate.swift in Sources */,
 				6B388A941A930093003D2138 /* TFSwipeShrinkView.swift in Sources */,
 				6B388A911A92F92E003D2138 /* ExampleViewController.swift in Sources */,
