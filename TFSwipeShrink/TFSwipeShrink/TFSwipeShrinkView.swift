@@ -21,12 +21,19 @@ class TFSwipeShrinkView: UIView, UIGestureRecognizerDelegate {
     var widthRange: CGFloat!
     var centerXRange: CGFloat!
     
+    // Should be called when making view programmatically
     override init(frame: CGRect) {
         super.init(frame: frame)
+        self.initGestures()
     }
 
+    // Should be called when creating view from storyboard
     required init(coder aDecoder: NSCoder) {
         super.init(coder: aDecoder)
+        self.initGestures()
+    }
+    
+    func initGestures() {
         
         var panGesture = UIPanGestureRecognizer(target: self, action: "panning:")
         panGesture.minimumNumberOfTouches = 1
@@ -37,8 +44,10 @@ class TFSwipeShrinkView: UIView, UIGestureRecognizerDelegate {
         tapGesture.numberOfTapsRequired = 1
         self.addGestureRecognizer(tapGesture)
         tapGesture.delegate = self
+        
     }
     
+    /// Method to set up initial and final positions of view
     func configureSizeAndPosition(parentViewFrame: CGRect) {
         
         self.initialCenter = self.center
