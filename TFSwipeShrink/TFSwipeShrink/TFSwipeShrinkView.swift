@@ -48,13 +48,13 @@ class TFSwipeShrinkView: UIView, UIGestureRecognizerDelegate {
     }
     
     /// Method to set up initial and final positions of view
-    func configureSizeAndPosition(parentViewFrame: CGRect) {
+    func configureSizeAndPosition(_ parentViewFrame: CGRect) {
         
         self.initialCenter = self.center
-        self.finalCenter = CGPointMake(parentViewFrame.size.width - parentViewFrame.size.width/4, parentViewFrame.size.height - (self.frame.size.height/4) - 2)
+        self.finalCenter = CGPoint(x: parentViewFrame.size.width - parentViewFrame.size.width/4, y: parentViewFrame.size.height - (self.frame.size.height/4) - 2)
         
         initialSize = self.frame.size
-        finalSize = CGSizeMake(parentViewFrame.size.width/2 - 10, (parentViewFrame.size.width/2 - 10) * aspectRatio)
+        finalSize = CGSize(width: parentViewFrame.size.width/2 - 10, height: (parentViewFrame.size.width/2 - 10) * aspectRatio)
         
         // Set common range totals once
         rangeTotal = finalCenter!.y - initialCenter!.y
@@ -62,20 +62,20 @@ class TFSwipeShrinkView: UIView, UIGestureRecognizerDelegate {
         centerXRange = finalCenter!.x - initialCenter!.x
     }
     
-    func panning(panGesture: UIPanGestureRecognizer) {
-        let translatedPoint = panGesture.translationInView(self.superview!)
+    func panning(_ panGesture: UIPanGestureRecognizer) {
+        let translatedPoint = panGesture.translation(in: self.superview!)
         var gestureState = panGesture.state
         
         let yChange = panGesture.view!.center.y + translatedPoint.y
         if yChange < initialCenter?.y {
-            gestureState = UIGestureRecognizerState.Ended
+            gestureState = UIGestureRecognizerState.ended
             
         } else if yChange >= finalCenter?.y {
-            gestureState = UIGestureRecognizerState.Ended
+            gestureState = UIGestureRecognizerState.ended
             
         }
 
-        if gestureState == UIGestureRecognizerState.Began || gestureState == UIGestureRecognizerState.Changed  {
+        if gestureState == UIGestureRecognizerState.began || gestureState == UIGestureRecognizerState.changed  {
 
             // modify size as view is panned down
             let progress = ((panGesture.view!.center.y - initialCenter!.y) / rangeTotal)
@@ -83,22 +83,22 @@ class TFSwipeShrinkView: UIView, UIGestureRecognizerDelegate {
             let invertedProgress = 1 - progress
             let newWidth = finalSize!.width + (widthRange * invertedProgress)
             
-            panGesture.view?.frame.size = CGSizeMake(newWidth, newWidth * aspectRatio)
+            panGesture.view?.frame.size = CGSize(width: newWidth, height: newWidth * aspectRatio)
             
             // ensure center x value moves along with size change
             let finalX = initialCenter!.x + (centerXRange * progress)
-            
-            panGesture.view?.center = CGPointMake(finalX, panGesture.view!.center.y + translatedPoint.y)
-            panGesture.setTranslation(CGPointMake(0, 0), inView: self.superview)
+            print("trans: \(CGPoint(x: finalX, y: panGesture.view!.center.y + translatedPoint.y))")
+            panGesture.view?.center = CGPoint(x: finalX, y: panGesture.view!.center.y + translatedPoint.y)
+            panGesture.setTranslation(CGPoint(x: 0, y: 0), in: self.superview)
 
-        } else if gestureState == UIGestureRecognizerState.Ended {
+        } else if gestureState == UIGestureRecognizerState.ended {
 
             let topDistance = yChange - initialCenter!.y
             let bottomDistance = finalCenter!.y - yChange
             
-            var chosenCenter: CGPoint = CGPointZero
-            var chosenSize: CGSize = CGSizeZero
-            self.userInteractionEnabled = false
+            var chosenCenter: CGPoint = CGPoint.zero
+            var chosenSize: CGSize = CGSize.zero
+            self.isUserInteractionEnabled = false
             
             if topDistance > bottomDistance {
                 // animate to bottom
@@ -112,36 +112,36 @@ class TFSwipeShrinkView: UIView, UIGestureRecognizerDelegate {
             }
             
             if panGesture.view?.center != chosenCenter {
-                UIView.animateWithDuration(0.4, animations: {
+                UIView.animate(withDuration: 0.4, animations: {
                     panGesture.view?.frame.size = chosenSize
                     panGesture.view?.center = chosenCenter
                     
                 }, completion: {(done: Bool) in
-                    self.userInteractionEnabled = true
+                    self.isUserInteractionEnabled = true
                 })
             } else {
-                self.userInteractionEnabled = true
+                self.isUserInteractionEnabled = true
             }
         }
         
     }
     
-    func tapped(tapGesture: UITapGestureRecognizer) {
+    func tapped(_ tapGesture: UITapGestureRecognizer) {
         
         if tapGesture.view?.center == self.finalCenter {
-            self.userInteractionEnabled = false
-            UIView.animateWithDuration(0.4, animations: {
+            self.isUserInteractionEnabled = false
+            UIView.animate(withDuration: 0.4, animations: {
                 tapGesture.view?.frame.size = self.initialSize!
                 tapGesture.view?.center = self.initialCenter!
                 
                 }, completion: {(done: Bool) in
-                    self.userInteractionEnabled = true
+                    self.isUserInteractionEnabled = true
             })
         }
         
     }
     
-    func gestureRecognizer(gestureRecognizer: UIGestureRecognizer, shouldRecognizeSimultaneouslyWithGestureRecognizer otherGestureRecognizer: UIGestureRecognizer) -> Bool {
+    func gestureRecognizer(_ gestureRecognizer: UIGestureRecognizer, shouldRecognizeSimultaneouslyWith otherGestureRecognizer: UIGestureRecognizer) -> Bool {
         return true
     }
 
