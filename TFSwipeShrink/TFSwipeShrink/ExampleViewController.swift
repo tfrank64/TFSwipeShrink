@@ -17,7 +17,7 @@ class ExampleViewController: UIViewController {
 
     override func viewDidLoad() {
         super.viewDidLoad()
-        var path = NSBundle.mainBundle().pathForResource("bayw-HD", ofType: "mp4")
+        let path = NSBundle.mainBundle().pathForResource("bayw-HD", ofType: "mp4")
         moviePlayerController = MPMoviePlayerViewController(contentURL: NSURL.fileURLWithPath(path!))
         moviePlayerController.moviePlayer.controlStyle = MPMovieControlStyle.None
         moviePlayerController.moviePlayer.scalingMode = MPMovieScalingMode.AspectFit

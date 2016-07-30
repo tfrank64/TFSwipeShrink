@@ -28,19 +28,19 @@ class TFSwipeShrinkView: UIView, UIGestureRecognizerDelegate {
     }
 
     // Should be called when creating view from storyboard
-    required init(coder aDecoder: NSCoder) {
+    required init?(coder aDecoder: NSCoder) {
         super.init(coder: aDecoder)
         self.initGestures()
     }
     
     func initGestures() {
         
-        var panGesture = UIPanGestureRecognizer(target: self, action: "panning:")
+        let panGesture = UIPanGestureRecognizer(target: self, action: #selector(TFSwipeShrinkView.panning(_:)))
         panGesture.minimumNumberOfTouches = 1
         panGesture.maximumNumberOfTouches = 1
         self.addGestureRecognizer(panGesture)
         
-        var tapGesture = UITapGestureRecognizer(target: self, action: "tapped:")
+        let tapGesture = UITapGestureRecognizer(target: self, action: #selector(TFSwipeShrinkView.tapped(_:)))
         tapGesture.numberOfTapsRequired = 1
         self.addGestureRecognizer(tapGesture)
         tapGesture.delegate = self
@@ -63,10 +63,10 @@ class TFSwipeShrinkView: UIView, UIGestureRecognizerDelegate {
     }
     
     func panning(panGesture: UIPanGestureRecognizer) {
-        var translatedPoint = panGesture.translationInView(self.superview!)
+        let translatedPoint = panGesture.translationInView(self.superview!)
         var gestureState = panGesture.state
         
-        var yChange = panGesture.view!.center.y + translatedPoint.y
+        let yChange = panGesture.view!.center.y + translatedPoint.y
         if yChange < initialCenter?.y {
             gestureState = UIGestureRecognizerState.Ended
             
@@ -78,23 +78,23 @@ class TFSwipeShrinkView: UIView, UIGestureRecognizerDelegate {
         if gestureState == UIGestureRecognizerState.Began || gestureState == UIGestureRecognizerState.Changed  {
 
             // modify size as view is panned down
-            var progress = ((panGesture.view!.center.y - initialCenter!.y) / rangeTotal)
+            let progress = ((panGesture.view!.center.y - initialCenter!.y) / rangeTotal)
             
-            var invertedProgress = 1 - progress
-            var newWidth = finalSize!.width + (widthRange * invertedProgress)
+            let invertedProgress = 1 - progress
+            let newWidth = finalSize!.width + (widthRange * invertedProgress)
             
             panGesture.view?.frame.size = CGSizeMake(newWidth, newWidth * aspectRatio)
             
             // ensure center x value moves along with size change
-            var finalX = initialCenter!.x + (centerXRange * progress)
+            let finalX = initialCenter!.x + (centerXRange * progress)
             
             panGesture.view?.center = CGPointMake(finalX, panGesture.view!.center.y + translatedPoint.y)
             panGesture.setTranslation(CGPointMake(0, 0), inView: self.superview)
 
         } else if gestureState == UIGestureRecognizerState.Ended {
 
-            var topDistance = yChange - initialCenter!.y
-            var bottomDistance = finalCenter!.y - yChange
+            let topDistance = yChange - initialCenter!.y
+            let bottomDistance = finalCenter!.y - yChange
             
             var chosenCenter: CGPoint = CGPointZero
             var chosenSize: CGSize = CGSizeZero
