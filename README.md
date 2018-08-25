@@ -2,7 +2,7 @@
 TFSwipeShrink
 =============
 
-A UIView subclass that mimics the video player panning in the the current YouTube iOS and Android apps.
+A UIView subclass that mimics the video player panning in the current YouTube iOS and Android apps.
 
 ## Example
 
